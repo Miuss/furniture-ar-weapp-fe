@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "home": "./basic/home/home",
+    "me": "./basic/me/me",
+    "ar": "./basic/ar/ar"
+  }
+}

@@ -1,0 +1,1 @@
+<image wx:if="{{a}}" class="loading-icon" src="{{b}}" mode="widthFix"></image><block wx:if="{{r0}}"><canvas id="gl-model" class="webgl-model" type="webgl" bindtouchstart="{{c}}" bindtouchmove="{{d}}" bindtouchend="{{e}}"></canvas></block>

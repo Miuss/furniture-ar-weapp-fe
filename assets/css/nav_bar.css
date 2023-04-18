@@ -1,0 +1,67 @@
+.nav-bar {
+	--padding-md: 8px;
+}
+
+.nav-bar.xq20 .title {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	font-size: 12pt;
+	color: #ffffff;
+}
+
+/**
+* 校庆20周年背景
+*/
+.xq20 {
+	background-image: url("https://20xq.wtbu.edu.cn/images/footertopbg.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.nav-bar.backdrop {
+	--nav-bar-background-color: rgba(255, 255, 255, 0.7) !important;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+
+.nav-bar .logo {
+	margin-right: 3pt;
+	width: 32px;
+	height: 32px;
+}
+
+.nav-bar .back {
+	margin-right: 16px;
+	width: 16px;
+	height: 16px;
+	padding: 7px;
+	border: 1px solid #e4e4e4;
+	border-radius: 3em;
+}
+
+.nav-bar .title {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	font-size: 12pt;
+	color: #444;
+}
+
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 200rpx 0;
+	box-sizing: border-box;
+}
+
+/* this rule will be remove */
+* {
+	transition: width 2s;
+	-moz-transition: width 2s;
+	-webkit-transition: width 2s;
+	-o-transition: width 2s;
+}
