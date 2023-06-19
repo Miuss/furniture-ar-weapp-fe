@@ -8,22 +8,23 @@
 			</div>
 		</van-nav-bar>
 		<div class="model-render">
-			<ModelRender v-if="material != null" :material="material" :modelUrl="material.modelUrl" :modelScale="material.modelScale"
-				:modelY="material.modelY" />
+			<ModelRender v-if="material != null" :material="material" :modelUrl="material.modelUrl"
+				:modelScale="material.modelScale" :modelY="material.modelY" />
 		</div>
 		<div class="materials" v-if="material != null">
 			<div class="material-item" @click="changeMaterial(item)" v-for="(item, index) in data.materials.rows"
 				:class="item.id == material.id ? 'is-active' : ''">{{item.name}}</div>
 		</div>
 		<div class="model-card" v-if="data != null">
-			<div class="price">¥{{data.price}}</div>
+			<div class="price" v-if="material != null">¥{{material.price}}</div>
 			<div class="model-name">{{data.name}}</div>
-			<div class="tags">
-				<van-tag class="tag-item" plain type="primary" v-for="(item, index) in data.materials">{{item.name}}
-				</van-tag>
-			</div>
+			<div class="content-title">家具介绍</div>
 			<div class="content">
 				{{data.content}}
+			</div>
+			<div class="content-title">材质介绍</div>
+			<div class="content" v-if="material != null">
+				{{material.content}}
 			</div>
 		</div>
 	</div>
@@ -95,15 +96,14 @@
 		padding: 28rpx;
 
 		.price {
-			position: absolute;
-			right: 28rpx;
 			font-size: 48rpx;
 			font-weight: 500;
 			color: #ff8917;
+			float: right;
 		}
 
 		.model-name {
-			margin-bottom: 10px;
+			margin-bottom: 23px;
 			font-size: 36rpx;
 			font-weight: 600;
 		}
@@ -122,6 +122,13 @@
 			opacity: .6;
 			font-size: 28rpx;
 		}
+
+		.content-title {
+			margin-top: 24rpx;
+			margin-bottom: 12rpx;
+			font-weight: 600;
+			font-size: 30rpx;
+		}
 	}
 
 	.materials {
@@ -133,13 +140,14 @@
 			margin-right: 10px;
 			color: #333;
 			border: 1px solid #333;
-			width: 64rpx;
+			min-width: 64rpx;
 			height: 64rpx;
 			font-size: 22rpx;
 			border-radius: 100%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			padding: 4px;
 
 			&.is-active {
 				background: #333;

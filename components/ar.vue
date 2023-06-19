@@ -57,8 +57,12 @@
 			pageSize: 1000
 		})
 		
-		furnitureList.value = res.data.rows
-		activeItem.value = res.data.rows[0]
+		res.data.rows.forEach((item) => {
+			item.materials.rows.forEach((material) => {
+				furnitureList.value.push(material)
+			})
+		})
+		activeItem.value = furnitureList.value[0]
 	}
 	
 	const selectFurniture = (item) => {
@@ -99,7 +103,7 @@
 
 		// three 点击触发
 		
-		const model = activeItem.value.materials.rows[0]
+		const model = activeItem.value
 		console.log(model)
 		exprience.value.onTouchEnd(model.id, model.modelUrl, model.md5, model.modelArScale)
 	}

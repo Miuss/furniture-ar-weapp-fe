@@ -1,5 +1,5 @@
 "use strict";
-const api = "http://192.168.1.102:3001/api";
+const api = "https://furniture-ar-server.miuss.icu/api";
 const showToast = function(message) {
   wx.showToast({
     title: message,

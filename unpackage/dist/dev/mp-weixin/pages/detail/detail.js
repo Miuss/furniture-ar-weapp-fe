@@ -8,8 +8,7 @@ require("../../api/user.js");
 if (!Array) {
   const _component_van_icon = common_vendor.resolveComponent("van-icon");
   const _component_van_nav_bar = common_vendor.resolveComponent("van-nav-bar");
-  const _component_van_tag = common_vendor.resolveComponent("van-tag");
-  (_component_van_icon + _component_van_nav_bar + _component_van_tag)();
+  (_component_van_icon + _component_van_nav_bar)();
 }
 if (!Math) {
   common_vendor.unref(ModelRender)();
@@ -80,21 +79,17 @@ const _sfc_main = {
         })
       } : {}, {
         j: data.value != null
-      }, data.value != null ? {
-        k: common_vendor.t(data.value.price),
-        l: common_vendor.t(data.value.name),
-        m: common_vendor.f(data.value.materials, (item, index, i0) => {
-          return {
-            a: common_vendor.t(item.name),
-            b: "11702132-3-" + i0
-          };
-        }),
-        n: common_vendor.p({
-          plain: true,
-          type: "primary"
-        }),
-        o: common_vendor.t(data.value.content)
-      } : {});
+      }, data.value != null ? common_vendor.e({
+        k: material.value != null
+      }, material.value != null ? {
+        l: common_vendor.t(material.value.price)
+      } : {}, {
+        m: common_vendor.t(data.value.name),
+        n: common_vendor.t(data.value.content),
+        o: material.value != null
+      }, material.value != null ? {
+        p: common_vendor.t(material.value.content)
+      } : {}) : {});
     };
   }
 };

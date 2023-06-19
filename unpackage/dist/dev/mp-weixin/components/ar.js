@@ -28,8 +28,12 @@ const _sfc_main = {
         pageIndex: 0,
         pageSize: 1e3
       });
-      furnitureList.value = res.data.rows;
-      activeItem.value = res.data.rows[0];
+      res.data.rows.forEach((item) => {
+        item.materials.rows.forEach((material) => {
+          furnitureList.value.push(material);
+        });
+      });
+      activeItem.value = furnitureList.value[0];
     };
     const selectFurniture = (item) => {
       activeItem.value = item;
@@ -60,7 +64,7 @@ const _sfc_main = {
       if (y <= ch - safeAreaBottom && y >= ch - safeAreaBottom - 58 && x <= cw - 16 && x >= 16) {
         return;
       }
-      const model = activeItem.value.materials.rows[0];
+      const model = activeItem.value;
       console.log(model);
       exprience.value.onTouchEnd(model.id, model.modelUrl, model.md5, model.modelArScale);
     };

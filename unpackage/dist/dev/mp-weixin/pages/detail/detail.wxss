@@ -37,14 +37,13 @@ page {
   padding: 28rpx;
 }
 .model-card .price {
-  position: absolute;
-  right: 28rpx;
   font-size: 48rpx;
   font-weight: 500;
   color: #ff8917;
+  float: right;
 }
 .model-card .model-name {
-  margin-bottom: 10px;
+  margin-bottom: 23px;
   font-size: 36rpx;
   font-weight: 600;
 }
@@ -60,6 +59,12 @@ page {
   opacity: 0.6;
   font-size: 28rpx;
 }
+.model-card .content-title {
+  margin-top: 24rpx;
+  margin-bottom: 12rpx;
+  font-weight: 600;
+  font-size: 30rpx;
+}
 .materials {
   position: relative;
   padding: 28rpx;
@@ -69,13 +74,14 @@ page {
   margin-right: 10px;
   color: #333;
   border: 1px solid #333;
-  width: 64rpx;
+  min-width: 64rpx;
   height: 64rpx;
   font-size: 22rpx;
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4px;
 }
 .materials .material-item.is-active {
   background: #333;

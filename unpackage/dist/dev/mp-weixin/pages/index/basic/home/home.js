@@ -7,10 +7,11 @@ require("../../../../store/userStore.js");
 require("../../../../api/user.js");
 if (!Array) {
   const _component_van_nav_bar = common_vendor.resolveComponent("van-nav-bar");
+  const _component_van_tag = common_vendor.resolveComponent("van-tag");
   const _component_van_col = common_vendor.resolveComponent("van-col");
   const _component_van_loading = common_vendor.resolveComponent("van-loading");
   const _component_van_row = common_vendor.resolveComponent("van-row");
-  (_component_van_nav_bar + _component_van_col + _component_van_loading + _component_van_row)();
+  (_component_van_nav_bar + _component_van_tag + _component_van_col + _component_van_loading + _component_van_row)();
 }
 const _sfc_main = {
   setup(__props) {
@@ -72,9 +73,15 @@ const _sfc_main = {
           return {
             a: item.coverUrl,
             b: common_vendor.t(item.name),
-            c: common_vendor.o(($event) => toDetailPage(item)),
-            d: index,
-            e: "1d2acd94-2-" + i0 + ",1d2acd94-1"
+            c: common_vendor.f(item.materials.rows, (tag, k1, i1) => {
+              return {
+                a: common_vendor.t(tag.name),
+                b: "1d2acd94-3-" + i0 + "-" + i1 + "," + ("1d2acd94-2-" + i0)
+              };
+            }),
+            d: common_vendor.o(($event) => toDetailPage(item)),
+            e: index,
+            f: "1d2acd94-2-" + i0 + ",1d2acd94-1"
           };
         }),
         e: common_vendor.p({

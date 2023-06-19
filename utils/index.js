@@ -1,4 +1,4 @@
-export const api = 'http://192.168.1.102:3001/api'
+export const api = 'https://furniture-ar-server.miuss.icu/api'
 
 export const showToast = function (message) {
   wx.showToast({

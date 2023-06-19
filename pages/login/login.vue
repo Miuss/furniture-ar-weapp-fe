@@ -10,7 +10,9 @@
 				<image :src="logo"></image>
 			</div>
 			<div class="title">星窝</div>
-			<div class="sub-title">AR识别家具小程序</div>
+			<div class="sub-title">AR家具摆放小程序</div>
+			<div class="sub-title">3D家具渲染</div>
+			<div class="sub-title">AR家具展示</div>
 		</div>
 		<div class="login-action" style="bottom: 20px;">
 			<van-button type="primary" color="#000000" @click="userStore.userLogin()" size="large" round block :loading="userStore.loginLoading" loading-text="微信登录中..." plain>微信账号快速登录</van-button>

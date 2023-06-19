@@ -22,6 +22,11 @@
 							<img :src="item.coverUrl" mode="aspectFill" />
 						</div>
 						<div class="name">{{item.name}}</div>
+						<div class="tags">
+							<van-tag class="tag-item" v-for="(tag) in item.materials.rows">
+								{{tag.name}}
+							</van-tag>
+						</div>
 					</div>
 				</van-col>
 				<div class="list-card-loading" v-if="loading">
@@ -190,6 +195,15 @@
 				font-weight: 500;
 				opacity: .8;
 				color: #000;
+			}
+			
+			.tags {
+				padding: 0 12rpx;
+				margin-bottom: 12rpx;
+				
+				.tag-item {
+					margin-right: 12rpx;
+				}
 			}
 		}
 	}
